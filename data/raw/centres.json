@@ -954,5 +954,13 @@
     "lng": 149.03986750228796,
     "address": "Whitlam, ACT",
     "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "ChIJj9TKneatF2sRSVMgHnyLH5s",
+    "name": "Woolworths Kippax",
+    "lat": -35.2228382,
+    "lng": 149.0202097,
+    "address": "Kippax Fair, Holt ACT 2615",
+    "source": "google_places"
   }
 ]
