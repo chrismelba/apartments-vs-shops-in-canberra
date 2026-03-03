@@ -28,6 +28,34 @@ DOCS_DIR   = os.path.join(os.path.dirname(__file__), "..", "docs")
 
 
 # ---------------------------------------------------------------------------
+# Display name helper
+# ---------------------------------------------------------------------------
+
+# Brand prefixes to strip from Google Places names
+_BRAND_PREFIXES = [
+    "Woolworths Metro ", "Woolworths ", "Coles ", "ALDI ",
+    "Supabarn ", "SupaBarn Express ", "SupaBarn ",
+    "Supaexpress ", "SupaExpress ",
+    "IGA ", "Friendly Grocer ", "Harris Farm Markets ",
+    "Costco Wholesale ",
+]
+
+def display_name(row) -> str:
+    """
+    Return a clean display name for a centre:
+      - Google Places: strip supermarket brand prefix  ("Woolworths Kippax" → "Kippax")
+      - ACTMAPI local centres: strip "Local Centre — "  ("Local Centre — Holt" → "Holt")
+    """
+    name = str(row.get("name", "") or "")
+    if str(row.get("source", "")) == "actmapi_cz4":
+        return name.replace("Local Centre \u2014 ", "").replace("Local Centre - ", "").strip()
+    for prefix in _BRAND_PREFIXES:
+        if name.startswith(prefix):
+            return name[len(prefix):].strip()
+    return name
+
+
+# ---------------------------------------------------------------------------
 # Colour helpers
 # ---------------------------------------------------------------------------
 
@@ -101,7 +129,7 @@ def score_bar_html(label, score, colour="#1976d2"):
     )
 
 
-def build_popup(row: pd.Series, colormap) -> folium.Popup:
+def build_popup(row: pd.Series, colormap, dname: str = "") -> folium.Popup:
     q  = row["shop_quality_score"]
     d  = row["density_score"]
     q_col = colormap(q)
@@ -156,7 +184,7 @@ def build_popup(row: pd.Series, colormap) -> folium.Popup:
     html = f"""
 <div style="font-family:sans-serif;min-width:260px;max-width:320px">
   <div style="background:{q_col};color:white;padding:8px 12px;border-radius:4px 4px 0 0">
-    <b style="font-size:14px">{row['name']}</b>
+    <b style="font-size:14px">{dname or row['name']}</b>
     <span style="float:right;font-size:18px;font-weight:bold">{q:.1f}</span>
   </div>
   <div style="padding:8px 12px;border:1px solid #eee;border-top:none">
@@ -244,6 +272,7 @@ def main():
             dash_array    = None
             target_group  = group_centres_group
 
+        dname = display_name(row)
         folium.CircleMarker(
             location=[row["lat"], row["lng"]],
             radius=radius,
@@ -253,9 +282,9 @@ def main():
             fill=True,
             fill_color=colour,
             fill_opacity=fill_opacity,
-            popup=build_popup(row, colormap),
+            popup=build_popup(row, colormap, dname),
             tooltip=folium.Tooltip(
-                f"<b>{row['name']}</b><br>"
+                f"<b>{dname}</b><br>"
                 f"Quality: {q:.1f} &nbsp;|&nbsp; Density: {row['density_score']:.1f}<br>"
                 f"{'Local Centre' if is_local else 'Group/Town Centre'} &bull; "
                 f"{int(row['num_shops'])} shops",
@@ -319,7 +348,7 @@ def _add_scatter_legend(m, df):
 
     points_json = json.dumps([
         {
-            "name":   str(row["name"]).replace("'", "\\'"),
+            "name":   display_name(row).replace("'", "\\'"),
             "q":      round(float(row["shop_quality_score"]), 1),
             "d":      round(float(row["density_score"]), 1),
             "p":      _safe_float(row.get("population_score")),
