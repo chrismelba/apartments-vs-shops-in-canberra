@@ -183,9 +183,9 @@ def build_popup(row: pd.Series, colormap, dname: str = "") -> folium.Popup:
 
     html = f"""
 <div style="font-family:sans-serif;min-width:260px;max-width:320px">
-  <div style="background:{q_col};color:white;padding:8px 12px;border-radius:4px 4px 0 0">
+  <div data-sc-header style="background:{q_col};color:white;padding:8px 12px;border-radius:4px 4px 0 0">
     <b style="font-size:14px">{dname or row['name']}</b>
-    <span style="float:right;font-size:18px;font-weight:bold">{q:.1f}</span>
+    <span data-sc-q style="float:right;font-size:18px;font-weight:bold">{q:.1f}</span>
   </div>
   <div style="padding:8px 12px;border:1px solid #eee;border-top:none">
 
@@ -193,7 +193,7 @@ def build_popup(row: pd.Series, colormap, dname: str = "") -> folium.Popup:
       {centre_type_badge}&nbsp; {row.get('address','')}
     </p>
 
-    <b style="font-size:12px">Shop quality score: {q:.1f}/10</b>
+    <b style="font-size:12px">Shop quality score: <span data-sc-q>{q:.1f}</span>/10</b>
     <p style="margin:2px 0 4px;font-size:11px;color:#666">
       {row['num_shops']} shops &bull; {int(row['total_reviews']):,} total reviews
     </p>
@@ -401,6 +401,7 @@ def _add_scatter_legend(m, df):
             "p":      _safe_float(row.get("population_score")),
             "pop500": int(row["population_500m"]) if row.get("population_500m") not in (None, "") and not (isinstance(row.get("population_500m"), float) and math.isnan(row["population_500m"])) else 0,
             "local":  str(row.get("source", "")) == "actmapi_cz4",
+            "ns":     int(row["num_shops"]),
             # Component scores for client-side weight adjustment
             "ar": round(float(row["score_avg_rating"]), 2),
             "rd": round(float(row["score_review_density"]), 2),
@@ -848,6 +849,8 @@ def _add_scatter_legend(m, df):
     }});
 
     // ── weight sliders ────────────────────────────────────────────
+    var currentVmin = 0, currentVmax = 10;  // updated by applyWeights
+
     var CMAP_STOPS = ['#d32f2f','#f57c00','#fbc02d','#7cb342','#2e7d32'];
 
     function lerpHex(a, b, t) {{
@@ -898,13 +901,47 @@ def _add_scatter_legend(m, df):
       var sortedQs = DATA.map(function(d) {{ return d.q; }}).sort(function(a,b){{return a-b;}});
       var p05 = Math.floor(sortedQs.length * 0.05);
       var p95 = Math.min(Math.floor(sortedQs.length * 0.95), sortedQs.length - 1);
-      var vmin = sortedQs[p05], vmax = sortedQs[p95];
+      currentVmin = sortedQs[p05]; currentVmax = sortedQs[p95];
       forEachMarker(function(layer) {{
         if (layer._dataIdx === undefined) return;
-        layer.setStyle({{ fillColor: jsColorScale(DATA[layer._dataIdx].q, vmin, vmax) }});
+        var d = DATA[layer._dataIdx];
+        layer.setStyle({{ fillColor: jsColorScale(d.q, currentVmin, currentVmax) }});
+        // Update tooltip text with new score
+        var typeStr = d.local ? 'Local Centre' : 'Group/Town Centre';
+        layer.setTooltipContent(
+          '<b>' + d.name + '</b><br>'
+          + 'Quality: ' + d.q.toFixed(1) + ' &nbsp;|&nbsp; Density: ' + d.d.toFixed(1) + '<br>'
+          + typeStr + ' \u2022 ' + d.ns + ' shops'
+        );
       }});
+      // Update the open popup (if any)
+      updateOpenPopup();
       redrawAll();
     }}
+
+    function updateOpenPopup() {{
+      var popup = leafletMap._popup;
+      if (!popup || !popup._isOpen) return;
+      var el = popup.getElement();
+      if (!el) return;
+      // Find the owning layer's data
+      var d = null;
+      forEachMarker(function(layer) {{
+        if (d) return;
+        if (layer.getPopup && layer.getPopup() === popup && layer._dataIdx !== undefined) {{
+          d = DATA[layer._dataIdx];
+        }}
+      }});
+      if (!d) return;
+      el.querySelectorAll('[data-sc-q]').forEach(function(e) {{
+        e.textContent = d.q.toFixed(1);
+      }});
+      var header = el.querySelector('[data-sc-header]');
+      if (header) header.style.background = jsColorScale(d.q, currentVmin, currentVmax);
+    }}
+
+    // Keep popup in sync when opened after a weight change
+    leafletMap.on('popupopen', function() {{ updateOpenPopup(); }});
 
     var WT_DEFAULTS = [25, 20, 35, 20];
     var wtIds    = ['wt-ar', 'wt-rd', 'wt-va', 'wt-ho'];
