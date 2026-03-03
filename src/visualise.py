@@ -882,7 +882,7 @@ def _add_scatter_legend(m, df):
     forEachMarker(function(layer) {{
       var tip = layer.getTooltip();
       if (!tip) return;
-      var m = tip.getContent().match(/^<b>([^<]+)<\/b>/);
+      var m = tip.getContent().match(/<b>([^<]+)<\/b>/);
       if (!m) return;
       var name = m[1];
       for (var i = 0; i < DATA.length; i++) {{
@@ -895,8 +895,10 @@ def _add_scatter_legend(m, df):
       DATA.forEach(function(d) {{
         d.q = Math.round((d.ar*w[0] + d.rd*w[1] + d.va*w[2] + d.ho*w[3]) * 10) / 10;
       }});
-      var qs = DATA.map(function(d) {{ return d.q; }});
-      var vmin = Math.min.apply(null, qs), vmax = Math.max.apply(null, qs);
+      var sortedQs = DATA.map(function(d) {{ return d.q; }}).sort(function(a,b){{return a-b;}});
+      var p05 = Math.floor(sortedQs.length * 0.05);
+      var p95 = Math.min(Math.floor(sortedQs.length * 0.95), sortedQs.length - 1);
+      var vmin = sortedQs[p05], vmax = sortedQs[p95];
       forEachMarker(function(layer) {{
         if (layer._dataIdx === undefined) return;
         layer.setStyle({{ fillColor: jsColorScale(DATA[layer._dataIdx].q, vmin, vmax) }});
