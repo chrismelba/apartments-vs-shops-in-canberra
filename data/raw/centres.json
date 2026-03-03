@@ -962,5 +962,77 @@
     "lng": 149.0202097,
     "address": "Kippax Fair, Holt ACT 2615",
     "source": "google_places"
+  },
+  {
+    "place_id": "ChIJ49Od_OtUFmsR5GCnHat8Kt0",
+    "name": "Coles Amaroo",
+    "lat": -35.16456,
+    "lng": 149.13207,
+    "address": "Hibberson St, Amaroo ACT",
+    "source": "google_places"
+  },
+  {
+    "place_id": "ChIJ6c3XBZxUFmsRUoRSAjP3be0",
+    "name": "Coles Gungahlin",
+    "lat": -35.18646,
+    "lng": 149.13588,
+    "address": "Gungahlin Town Centre ACT",
+    "source": "google_places"
+  },
+  {
+    "place_id": "ChIJHYUSL1erF2sR1m-BfqhHHD8",
+    "name": "Supabarn Casey",
+    "lat": -35.17478,
+    "lng": 149.0953,
+    "address": "Casey Marketplace ACT",
+    "source": "google_places"
+  },
+  {
+    "place_id": "ChIJA02uo081FmsRya-d3BRKSAk",
+    "name": "Woolworths Calwell",
+    "lat": -35.43469,
+    "lng": 149.11471,
+    "address": "Calwell shops ACT",
+    "source": "google_places"
+  },
+  {
+    "place_id": "ChIJXxjpaJZKFmsRY8ube7gfawo",
+    "name": "Coles Chisholm",
+    "lat": -35.41376,
+    "lng": 149.12837,
+    "address": "Chisholm shops ACT",
+    "source": "google_places"
+  },
+  {
+    "place_id": "ChIJ5_vKHSjLF2sRKan3eNUC6pE",
+    "name": "ALDI Conder",
+    "lat": -35.45715,
+    "lng": 149.09283,
+    "address": "Conder shops ACT",
+    "source": "google_places"
+  },
+  {
+    "place_id": "ChIJkXw0jYTKF2sRKpXq9oj-UhA",
+    "name": "Woolworths Tuggeranong",
+    "lat": -35.41566,
+    "lng": 149.06681,
+    "address": "Tuggeranong Town Centre ACT",
+    "source": "google_places"
+  },
+  {
+    "place_id": "ChIJ1QDzhKe1F2sRyTkWY4UBS-M",
+    "name": "Woolworths Kambah",
+    "lat": -35.38018,
+    "lng": 149.05727,
+    "address": "Kambah Village shops ACT",
+    "source": "google_places"
+  },
+  {
+    "place_id": "ChIJxVnalz61F2sRdhKFec4sedU",
+    "name": "Coles Wanniassa",
+    "lat": -35.39129,
+    "lng": 149.08547,
+    "address": "Wanniassa shops ACT",
+    "source": "google_places"
   }
 ]
