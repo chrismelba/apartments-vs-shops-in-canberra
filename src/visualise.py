@@ -304,6 +304,9 @@ def main():
     # Size legend
     _add_size_legend(m)
 
+    # Weight sliders panel
+    _add_weights_panel(m)
+
     os.makedirs(DOCS_DIR, exist_ok=True)
     out_path = os.path.join(DOCS_DIR, "index.html")
     m.save(out_path)
@@ -330,6 +333,50 @@ def _add_size_legend(m):
     m.get_root().html.add_child(folium.Element(legend_html))
 
 
+def _add_weights_panel(m):
+    """Fixed panel with coupled sliders to adjust shop quality score weights."""
+    html = """
+    <div id="wt-panel" style="position:fixed;bottom:185px;left:50px;z-index:1000;
+                background:white;padding:10px 14px;border-radius:6px;
+                box-shadow:0 2px 6px rgba(0,0,0,.3);font-family:sans-serif;
+                font-size:12px;min-width:220px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <b>&#9881; Score weights</b>
+        <button id="wt-reset"
+                style="border:1px solid #ddd;background:#f5f5f5;border-radius:3px;
+                       padding:1px 7px;font-size:11px;cursor:pointer">Reset</button>
+      </div>
+      <table style="width:100%;border-collapse:collapse">
+        <tr>
+          <td style="padding:2px 4px 2px 0;white-space:nowrap">Avg rating</td>
+          <td style="padding:2px 4px"><input type="range" id="wt-ar" min="0" max="100" value="25"
+              style="width:90px;vertical-align:middle"></td>
+          <td style="padding:2px 0 2px 4px;width:30px;text-align:right" id="wt-ar-lbl">25%</td>
+        </tr>
+        <tr>
+          <td style="padding:2px 4px 2px 0;white-space:nowrap">Popularity</td>
+          <td style="padding:2px 4px"><input type="range" id="wt-rd" min="0" max="100" value="20"
+              style="width:90px;vertical-align:middle"></td>
+          <td style="padding:2px 0 2px 4px;width:30px;text-align:right" id="wt-rd-lbl">20%</td>
+        </tr>
+        <tr>
+          <td style="padding:2px 4px 2px 0;white-space:nowrap">Variety</td>
+          <td style="padding:2px 4px"><input type="range" id="wt-va" min="0" max="100" value="35"
+              style="width:90px;vertical-align:middle"></td>
+          <td style="padding:2px 0 2px 4px;width:30px;text-align:right" id="wt-va-lbl">35%</td>
+        </tr>
+        <tr>
+          <td style="padding:2px 4px 2px 0;white-space:nowrap">Opening hours</td>
+          <td style="padding:2px 4px"><input type="range" id="wt-ho" min="0" max="100" value="20"
+              style="width:90px;vertical-align:middle"></td>
+          <td style="padding:2px 0 2px 4px;width:30px;text-align:right" id="wt-ho-lbl">20%</td>
+        </tr>
+      </table>
+    </div>
+    """
+    m.get_root().html.add_child(folium.Element(html))
+
+
 def _add_scatter_legend(m, df):
     """Small always-visible scatter chart in the corner.
 
@@ -354,6 +401,11 @@ def _add_scatter_legend(m, df):
             "p":      _safe_float(row.get("population_score")),
             "pop500": int(row["population_500m"]) if row.get("population_500m") not in (None, "") and not (isinstance(row.get("population_500m"), float) and math.isnan(row["population_500m"])) else 0,
             "local":  str(row.get("source", "")) == "actmapi_cz4",
+            # Component scores for client-side weight adjustment
+            "ar": round(float(row["score_avg_rating"]), 2),
+            "rd": round(float(row["score_review_density"]), 2),
+            "va": round(float(row["score_variety"]), 2),
+            "ho": round(float(row["score_hours"]), 2),
         }
         for _, row in df.iterrows()
     ])
@@ -794,6 +846,104 @@ def _add_scatter_legend(m, df):
       var key = LAYER_MAP[e.name];
       if (key) {{ SC_VISIBLE[key] = false; redrawAll(); }}
     }});
+
+    // ── weight sliders ────────────────────────────────────────────
+    var CMAP_STOPS = ['#d32f2f','#f57c00','#fbc02d','#7cb342','#2e7d32'];
+
+    function lerpHex(a, b, t) {{
+      var ah = parseInt(a.slice(1), 16), bh = parseInt(b.slice(1), 16);
+      var ar = (ah>>16)&0xff, ag = (ah>>8)&0xff, ab = ah&0xff;
+      var br = (bh>>16)&0xff, bg = (bh>>8)&0xff, bb = bh&0xff;
+      var r = Math.round(ar+(br-ar)*t), g = Math.round(ag+(bg-ag)*t), bl = Math.round(ab+(bb-ab)*t);
+      return '#'+((1<<24)|(r<<16)|(g<<8)|bl).toString(16).slice(1);
+    }}
+
+    function jsColorScale(q, vmin, vmax) {{
+      var t = vmax > vmin ? Math.max(0, Math.min(1, (q-vmin)/(vmax-vmin))) : 0.5;
+      var idx = t * (CMAP_STOPS.length - 1);
+      var lo = Math.floor(idx), hi = Math.min(lo+1, CMAP_STOPS.length-1);
+      return lerpHex(CMAP_STOPS[lo], CMAP_STOPS[hi], idx-lo);
+    }}
+
+    // Match each Leaflet CircleMarker to a DATA entry by tooltip name
+    leafletMap.eachLayer(function(layer) {{
+      if (!(layer instanceof L.CircleMarker)) return;
+      var tip = layer.getTooltip();
+      if (!tip) return;
+      var m = tip.getContent().match(/^<b>([^<]+)<\/b>/);
+      if (!m) return;
+      var name = m[1];
+      for (var i = 0; i < DATA.length; i++) {{
+        if (DATA[i].name === name) {{ layer._dataIdx = i; break; }}
+      }}
+    }});
+
+    function applyWeights(vals) {{
+      var w = vals.map(function(v) {{ return v / 100; }});
+      DATA.forEach(function(d) {{
+        d.q = Math.round((d.ar*w[0] + d.rd*w[1] + d.va*w[2] + d.ho*w[3]) * 10) / 10;
+      }});
+      var qs = DATA.map(function(d) {{ return d.q; }});
+      var vmin = Math.min.apply(null, qs), vmax = Math.max.apply(null, qs);
+      leafletMap.eachLayer(function(layer) {{
+        if (layer._dataIdx === undefined) return;
+        layer.setStyle({{ fillColor: jsColorScale(DATA[layer._dataIdx].q, vmin, vmax) }});
+      }});
+      redrawAll();
+    }}
+
+    var WT_DEFAULTS = [25, 20, 35, 20];
+    var wtIds    = ['wt-ar', 'wt-rd', 'wt-va', 'wt-ho'];
+    var wtLblIds = ['wt-ar-lbl', 'wt-rd-lbl', 'wt-va-lbl', 'wt-ho-lbl'];
+    var wtSliders = wtIds.map(function(id) {{ return document.getElementById(id); }});
+    var wtLabels  = wtLblIds.map(function(id) {{ return document.getElementById(id); }});
+
+    function getVals() {{ return wtSliders.map(function(s) {{ return +s.value; }}); }}
+    function setVals(vals) {{
+      vals.forEach(function(v, i) {{
+        if (wtSliders[i]) wtSliders[i].value = v;
+        if (wtLabels[i])  wtLabels[i].textContent = v + '%';
+      }});
+    }}
+
+    function onSliderChange(changedIdx) {{
+      var vals = getVals();
+      var newVal = vals[changedIdx];
+      var remaining = 100 - newVal;
+      var otherSum = vals.reduce(function(a, v, i) {{ return i === changedIdx ? a : a + v; }}, 0);
+      if (otherSum > 0) {{
+        // Scale others proportionally to fill remaining
+        var scaled = vals.map(function(v, i) {{
+          return i === changedIdx ? v : Math.round(v / otherSum * remaining);
+        }});
+        // Fix rounding drift: add/subtract from the largest non-changed slider
+        var drift = 100 - scaled.reduce(function(a, b) {{ return a + b; }}, 0);
+        if (drift !== 0) {{
+          var maxIdx = -1, maxVal = -1;
+          scaled.forEach(function(v, i) {{ if (i !== changedIdx && v > maxVal) {{ maxVal = v; maxIdx = i; }} }});
+          if (maxIdx >= 0) scaled[maxIdx] += drift;
+        }}
+        vals = scaled;
+      }} else {{
+        // All others are 0; set changed to 100
+        vals = vals.map(function(v, i) {{ return i === changedIdx ? 100 : 0; }});
+      }}
+      setVals(vals);
+      applyWeights(vals);
+    }}
+
+    wtSliders.forEach(function(slider, i) {{
+      if (!slider) return;
+      slider.addEventListener('input', function() {{ onSliderChange(i); }});
+    }});
+
+    var resetBtn = document.getElementById('wt-reset');
+    if (resetBtn) {{
+      resetBtn.addEventListener('click', function() {{
+        setVals(WT_DEFAULTS.slice());
+        applyWeights(WT_DEFAULTS.slice());
+      }});
+    }}
   }}
 }})();
 </script>
