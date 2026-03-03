@@ -57,7 +57,7 @@ def score_review_density(shops) -> float:
     total = sum(s.get("user_ratings_total", 0) or 0 for s in shops)
     per_shop = total / len(shops)
     raw = math.log10(per_shop + 1)
-    return min(raw / math.log10(1001) * 10, 10.0)
+    return min(raw / math.log10(401) * 10, 10.0)
 
 
 def score_variety(shops) -> float:
@@ -255,6 +255,28 @@ def top_shops(shops, n=3):
 
 
 # ---------------------------------------------------------------------------
+# Post-processing normalization helpers
+# ---------------------------------------------------------------------------
+
+def _normalize_zscore(series: pd.Series, clip_sigma: float = 2.5) -> pd.Series:
+    """Z-score normalization clipped to ±clip_sigma, mapped to 0–10."""
+    mean, std = series.mean(), series.std()
+    if std == 0:
+        return pd.Series([5.0] * len(series), index=series.index)
+    z = (series - mean) / std
+    return (z.clip(-clip_sigma, clip_sigma) / clip_sigma * 5 + 5).round(2)
+
+
+def _normalize_percentile(series: pd.Series, p_lo: float = 5, p_hi: float = 95) -> pd.Series:
+    """Stretch p_lo–p_hi percentile range to 0–10, clip extremes."""
+    lo = series.quantile(p_lo / 100)
+    hi = series.quantile(p_hi / 100)
+    if lo == hi:
+        return pd.Series([5.0] * len(series), index=series.index)
+    return ((series - lo) / (hi - lo) * 10).clip(0, 10).round(2)
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -357,6 +379,21 @@ def main():
                 )
 
     df = pd.DataFrame(rows)
+
+    # Normalise shop quality components across all centres
+    df["score_avg_rating"]     = _normalize_zscore(df["score_avg_rating"])
+    df["score_review_density"] = _normalize_percentile(df["score_review_density"])
+    df["score_variety"]        = _normalize_percentile(df["score_variety"])
+    df["score_hours"]          = _normalize_percentile(df["score_hours"])
+
+    # Recompute composite score from normalised components
+    df["shop_quality_score"] = (
+        df["score_avg_rating"]     * SCORE_WEIGHTS["avg_rating"]
+        + df["score_review_density"] * SCORE_WEIGHTS["review_density"]
+        + df["score_variety"]        * SCORE_WEIGHTS["variety"]
+        + df["score_hours"]          * SCORE_WEIGHTS["hours"]
+    ).round(2)
+
     out = os.path.join(PROC_DIR, "analysis.csv")
     df.to_csv(out, index=False)
     print(f"Saved {len(df)} centres → {os.path.relpath(out)}")
