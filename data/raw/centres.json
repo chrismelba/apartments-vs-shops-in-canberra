@@ -1,0 +1,958 @@
+[
+  {
+    "place_id": "ChIJjVRG6GVNFmsR1sDCsXw-w3Q",
+    "name": "Coles Canberra Civic",
+    "lat": -35.2782068,
+    "lng": 149.1339409,
+    "address": "Bunda St, Canberra ACT 2601, Australia"
+  },
+  {
+    "place_id": "ChIJJR1ty_9NFmsRLkO6neAbgfE",
+    "name": "The Corner Market",
+    "lat": -35.2788406,
+    "lng": 149.1257148,
+    "address": "Shop 1 & 3/113-119 Marcus Clarke St, Canberra ACT 2601, Australia"
+  },
+  {
+    "place_id": "ChIJq_5mmOZNFmsR_FFQsHmgaf0",
+    "name": "All In One Super Mart CANBERRA",
+    "lat": -35.2781544,
+    "lng": 149.1285259,
+    "address": "3/53 Alinga St, Canberra ACT 2601, Australia"
+  },
+  {
+    "place_id": "ChIJjQrir8hNFmsRl4XvpOFcnhQ",
+    "name": "Buddys Convenience store",
+    "lat": -35.2800618,
+    "lng": 149.1311151,
+    "address": "unit 1/161 London Cct, Canberra ACT 2601, Australia"
+  },
+  {
+    "place_id": "ChIJWTAYr6FNFmsRedp6VVXl8_s",
+    "name": "21 Capital Mart",
+    "lat": -35.2841219,
+    "lng": 149.1246403,
+    "address": "Tenancy 2/21-23 Marcus Clarke St, Canberra ACT 2601, Australia"
+  },
+  {
+    "place_id": "ChIJYwc6r_JSFmsRP0aApfqZbpA",
+    "name": "Woolworths Dickson",
+    "lat": -35.249974,
+    "lng": 149.1386251,
+    "address": "1 Dickson Pl, Dickson ACT 2602, Australia"
+  },
+  {
+    "place_id": "ChIJsc9euohSFmsRVHJ1pIvs4Ag",
+    "name": "IGA Ainslie Supermarket",
+    "lat": -35.261979,
+    "lng": 149.144987,
+    "address": "9/11 Edgar St, Ainslie ACT 2602, Australia"
+  },
+  {
+    "place_id": "ChIJRfbd0OZNFmsR_Oq9eSO37jk",
+    "name": "Daily Market Groceries Canberra City",
+    "lat": -35.2768193,
+    "lng": 149.1254796,
+    "address": "Shop 5/35 Childers St, Canberra ACT 2601, Australia"
+  },
+  {
+    "place_id": "ChIJVzmXO5xNFmsR7A9NtN-0qP8",
+    "name": "IGA",
+    "lat": -35.2895698,
+    "lng": 149.1539791,
+    "address": "SHOP 5/10 Blamey Pl, Campbell ACT 2612, Australia"
+  },
+  {
+    "place_id": "ChIJb29AXXlNFmsReuO3oq8-vb0",
+    "name": "Akuna Mini Mart",
+    "lat": -35.2818526,
+    "lng": 149.1327116,
+    "address": "10 Akuna St, Canberra ACT 2601, Australia"
+  },
+  {
+    "place_id": "ChIJkzavU5lSFmsRoD0I5Wu7nUM",
+    "name": "BRADDON SUPERMARKET",
+    "lat": -35.2640346,
+    "lng": 149.1327682,
+    "address": "94 Lowanna St, Braddon ACT 2612, Australia"
+  },
+  {
+    "place_id": "ChIJGU572aBSFmsR-640eVdD8nA",
+    "name": "Supabarn O\u2019Connor",
+    "lat": -35.264095,
+    "lng": 149.1222495,
+    "address": "3 Sargood St, O'Connor ACT 2602, Australia"
+  },
+  {
+    "place_id": "ChIJBcovVRxNFmsRezV5r3Sw86s",
+    "name": "Barton Grocer",
+    "lat": -35.3061435,
+    "lng": 149.1358749,
+    "address": "48 Macquarie St, Barton ACT 2600, Australia"
+  },
+  {
+    "place_id": "ChIJiyO5SexMFmsRXAQqht7cJXM",
+    "name": "Coles Manuka",
+    "lat": -35.3210247,
+    "lng": 149.1341946,
+    "address": "Franklin Street &, Flinders Way, Griffith ACT 2603, Australia"
+  },
+  {
+    "place_id": "ChIJH2uTPGZNFmsRfVosH_tO9Yg",
+    "name": "Daily Market Groceries Kambri",
+    "lat": -35.2774671,
+    "lng": 149.1202486,
+    "address": "Joplin Ln B156-B1 Kambri, The Australian National University, Acton ACT 2601, Australia"
+  },
+  {
+    "place_id": "ChIJjaE19fxMFmsRS9WidWkuXl0",
+    "name": "Supabarn Kingston",
+    "lat": -35.3164172,
+    "lng": 149.142356,
+    "address": "34/38 Eyre St, Kingston ACT 2604, Australia"
+  },
+  {
+    "place_id": "ChIJbf5I23CtF2sRqq3ZJYem2iA",
+    "name": "Coles Belconnen",
+    "lat": -35.237949,
+    "lng": 149.064837,
+    "address": "Benjamin Way, Belconnen ACT 2617, Australia"
+  },
+  {
+    "place_id": "ChIJ2xAuzr1SFmsRKjsJk7jphSc",
+    "name": "Lyneham Supaexpress",
+    "lat": -35.2520582,
+    "lng": 149.1248453,
+    "address": "1 Wattle Pl, Lyneham ACT 2602, Australia"
+  },
+  {
+    "place_id": "ChIJz0Tr0oKyF2sRO5rhv6dBlkY",
+    "name": "Coles Jamison",
+    "lat": -35.2528076,
+    "lng": 149.0713348,
+    "address": "Jamison Plaza, Bowman St, Macquarie ACT 2614, Australia"
+  },
+  {
+    "place_id": "ChIJkT7aXuNNFmsRROnDtJCH-_Q",
+    "name": "Costco Wholesale Canberra",
+    "lat": -35.2972375,
+    "lng": 149.1905839,
+    "address": "39-41 Mustang Ave, MAJURA PARK ACT 2609, Australia"
+  },
+  {
+    "place_id": "ChIJyUNkZUJNFmsRNrosFDJBLkE",
+    "name": "DEAKIN SUPAEXPRESS & LOCAL LIQUOR",
+    "lat": -35.31507819999999,
+    "lng": 149.108165,
+    "address": "25-27 Hopetoun Cct, Deakin ACT 2600, Australia"
+  },
+  {
+    "place_id": "ChIJxRhXjONNFmsRwdgFvj1e6e8",
+    "name": "Majura Park Shopping Centre",
+    "lat": -35.2993485,
+    "lng": 149.1905601,
+    "address": "18/26 Spitfire Ave, Majura Park ACT 2609, Australia"
+  },
+  {
+    "place_id": "ChIJyWeJSry0F2sRxpujisQ7810",
+    "name": "Woolworths Woden",
+    "lat": -35.3457533,
+    "lng": 149.0847462,
+    "address": "1 Keltie St, Phillip ACT 2606, Australia"
+  },
+  {
+    "place_id": "ChIJO4Ivf5tUFmsR9mKNI9UM1Pg",
+    "name": "ALDI",
+    "lat": -35.1848509,
+    "lng": 149.1331888,
+    "address": "Marketplace Gungahlin Shopping Center, 33 Hibberson St, Gungahlin ACT 2912, Australia"
+  },
+  {
+    "place_id": "ChIJK47KoOZOFmsR2Cy0r9e7PHk",
+    "name": "Coles Queanbeyan",
+    "lat": -35.3516692,
+    "lng": 149.2355943,
+    "address": "Riverside Plaza, 131 Monaro St, Queanbeyan NSW 2620, Australia"
+  },
+  {
+    "place_id": "ChIJbR26XZizF2sRX47zsFYlVvE",
+    "name": "Woolworths Weston Creek",
+    "lat": -35.3405945,
+    "lng": 149.0529396,
+    "address": "21 Mahony Ct, Weston ACT 2611, Australia"
+  },
+  {
+    "place_id": "ChIJi50tQ9WsF2sRNcITMpCS1QE",
+    "name": "Coles Kaleen",
+    "lat": -35.220295,
+    "lng": 149.1028981,
+    "address": "Plaza Shopping Centre, 1 Maribyrnong Ave, Kaleen ACT 2617, Australia"
+  },
+  {
+    "place_id": "ChIJN22YjVVLFmsRlOb1lti6d0E",
+    "name": "Friendly Grocer",
+    "lat": -35.3425262,
+    "lng": 149.1082786,
+    "address": "Garran Shopping Centre, Garran Pl, Garran ACT 2605, Australia"
+  },
+  {
+    "place_id": "ChIJv5KWNVRSFmsRCgT0TkXAPEY",
+    "name": "IGA Hackett",
+    "lat": -35.248198,
+    "lng": 149.162636,
+    "address": "1 Hackett Pl, Hackett ACT 2602, Australia"
+  },
+  {
+    "place_id": "ChIJzbXFbc-0F2sRP_fnXywM_qE",
+    "name": "Woolworths Mawson",
+    "lat": -35.3661449,
+    "lng": 149.0946696,
+    "address": "15 Mawson Pl, Mawson ACT 2607, Australia"
+  },
+  {
+    "place_id": "ChIJlwGpcEpTFmsRgNSJTx9aXnA",
+    "name": "Supabarn Crace",
+    "lat": -35.2020605,
+    "lng": 149.1075757,
+    "address": "56 Abena Ave, Crace ACT 2911, Australia"
+  },
+  {
+    "place_id": "ChIJnYKclXhTFmsRGBRKiLQuttA",
+    "name": "Woolworths Metro Franklin",
+    "lat": -35.2002306,
+    "lng": 149.1489181,
+    "address": "51 Nullarbor Ave, Franklin ACT 2913, Australia"
+  },
+  {
+    "place_id": "ChIJrWsog8pNFmsR2mDJL3qH1Yw",
+    "name": "Harris Farm Markets Majura Park",
+    "lat": -35.2954122,
+    "lng": 149.1889051,
+    "address": "Unit 3/10 Catalina Dr, Majura Park ACT 2609, Australia"
+  },
+  {
+    "place_id": "ChIJVZrrO4itF2sRohDWRcaIPD0",
+    "name": "Woolworths Metro Hawker",
+    "lat": -35.2431704,
+    "lng": 149.0441199,
+    "address": "29 Hawker Pl, Hawker ACT 2614, Australia"
+  },
+  {
+    "place_id": "ChIJd3xA_C9NFmsRVFgty1JopUo",
+    "name": "Red Hill SupaExpress",
+    "lat": -35.3412847,
+    "lng": 149.1313765,
+    "address": "Duyfken Pl, Red Hill ACT 2603, Australia"
+  },
+  {
+    "place_id": "ChIJO7cTE8qtF2sR7KuFjLNUD2U",
+    "name": "Woolworths Charnwood",
+    "lat": -35.2048626,
+    "lng": 149.0331797,
+    "address": "25-30 Charnwood Pl, Charnwood ACT 2615, Australia"
+  },
+  {
+    "place_id": "ChIJay60EiqtF2sRQisJN6H1ZqE",
+    "name": "Supaexpress",
+    "lat": -35.2337993,
+    "lng": 149.1029054,
+    "address": "Unit 8 Gwydir Square, Maribyrnong Ave, Kaleen ACT 2617, Australia"
+  },
+  {
+    "place_id": "ChIJK0CPNVRSFmsRQaJhhhwF8YU",
+    "name": "SupaBarn Express",
+    "lat": -35.2389866,
+    "lng": 149.1533702,
+    "address": "5 Watson Pl, Watson ACT 2602, Australia"
+  },
+  {
+    "place_id": "ChIJa7uxoK2tF2sRC0vAE5HV4Kw",
+    "name": "Friendly Grocer & Local Liquor Melba",
+    "lat": -35.2081529,
+    "lng": 149.0486515,
+    "address": "1/4-6 Melba Ct, Melba ACT 2615, Australia"
+  },
+  {
+    "place_id": "ChIJg2obeayzF2sRA6xlqo1mAUw",
+    "name": "Friendly Grocer",
+    "lat": -35.3335607,
+    "lng": 149.0937384,
+    "address": "16 Hughes Pl, Hughes ACT 2605, Australia"
+  },
+  {
+    "place_id": "ChIJ0ZWQcS6zF2sRXvNDqh6tBLE",
+    "name": "SupaExpress Yarralumla & Local Liquor",
+    "lat": -35.30741,
+    "lng": 149.0977237,
+    "address": "23 Bentham St, Yarralumla ACT 2600, Australia"
+  },
+  {
+    "place_id": "ChIJ732pCEy1F2sR525mc9N8mKk",
+    "name": "Woolworths Erindale",
+    "lat": -35.4036026,
+    "lng": 149.098477,
+    "address": "50/68 Comrie St, Wanniassa ACT 2903, Australia"
+  },
+  {
+    "place_id": "ChIJ908-QV2zF2sRViYKvPd99gk",
+    "name": "Coles Curtin",
+    "lat": -35.3256387,
+    "lng": 149.0824128,
+    "address": "Centre, 51 Curtin Pl, Curtin ACT 2605, Australia"
+  },
+  {
+    "place_id": "ChIJTchhuKGtF2sRa3IDwS5f3Wo",
+    "name": "SupaExpress",
+    "lat": -35.2263914,
+    "lng": 149.0544269,
+    "address": "1/26 Kesteven St, Florey ACT 2615, Australia"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d19454_149d01959",
+    "name": "Local Centre \u2014 Dunlop",
+    "lat": -35.194542552050194,
+    "lng": 149.0195889812633,
+    "address": "Dunlop, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d17151_149d14304",
+    "name": "Local Centre \u2014 Forde",
+    "lat": -35.171508839720154,
+    "lng": 149.1430375462976,
+    "address": "Forde, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d16139_149d13905",
+    "name": "Local Centre \u2014 Bonner",
+    "lat": -35.16138869166222,
+    "lng": 149.13904958034237,
+    "address": "Bonner, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d35242_149d07597",
+    "name": "Local Centre \u2014 Chifley",
+    "lat": -35.352423022078945,
+    "lng": 149.07596966543792,
+    "address": "Chifley, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d24112_149d09215",
+    "name": "Local Centre \u2014 Bruce",
+    "lat": -35.241117558988726,
+    "lng": 149.09214639040144,
+    "address": "Bruce, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d33671_149d03242",
+    "name": "Local Centre \u2014 Duffy",
+    "lat": -35.33671209286517,
+    "lng": 149.0324184867533,
+    "address": "Duffy, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d20872_149d07354",
+    "name": "Local Centre \u2014 Evatt",
+    "lat": -35.20871878245099,
+    "lng": 149.07353678523282,
+    "address": "Evatt, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d25642_149d07889",
+    "name": "Local Centre \u2014 Aranda",
+    "lat": -35.25642329902708,
+    "lng": 149.07888689608967,
+    "address": "Aranda, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d37297_149d08718",
+    "name": "Local Centre \u2014 Torrens",
+    "lat": -35.372973727316676,
+    "lng": 149.08717870367764,
+    "address": "Torrens, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d46514_149d08554",
+    "name": "Local Centre \u2014 Gordon",
+    "lat": -35.46514397188536,
+    "lng": 149.08553511695885,
+    "address": "Gordon, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d38413_149d07216",
+    "name": "Local Centre \u2014 Kambah",
+    "lat": -35.384126102006206,
+    "lng": 149.07216402039012,
+    "address": "Kambah, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d21344_149d09557",
+    "name": "Local Centre \u2014 Giralang",
+    "lat": -35.213437161026626,
+    "lng": 149.0955667951656,
+    "address": "Giralang, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d18306_149d09812",
+    "name": "Local Centre \u2014 Nicholls",
+    "lat": -35.183057444431284,
+    "lng": 149.09811739890816,
+    "address": "Nicholls, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d25889_149d06336",
+    "name": "Local Centre \u2014 Cook",
+    "lat": -35.2588920782982,
+    "lng": 149.0633587309174,
+    "address": "Cook, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d38851_149d05191",
+    "name": "Local Centre \u2014 Kambah",
+    "lat": -35.388506370189084,
+    "lng": 149.05191256577396,
+    "address": "Kambah, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d36150_149d05716",
+    "name": "Local Centre \u2014 Fisher",
+    "lat": -35.361503680449786,
+    "lng": 149.05716225251703,
+    "address": "Fisher, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d43059_149d08115",
+    "name": "Local Centre \u2014 Bonython",
+    "lat": -35.43059348351229,
+    "lng": 149.08114751698113,
+    "address": "Bonython, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d19863_149d04420",
+    "name": "Local Centre \u2014 Charnwood",
+    "lat": -35.19863369137756,
+    "lng": 149.04419802873707,
+    "address": "Charnwood, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d22385_149d11155",
+    "name": "Local Centre \u2014 Kaleen",
+    "lat": -35.223853461782184,
+    "lng": 149.11155465430204,
+    "address": "Kaleen, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d43889_149d09762",
+    "name": "Local Centre \u2014 Calwell",
+    "lat": -35.43888983702605,
+    "lng": 149.09762327898997,
+    "address": "Calwell, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d33317_149d08010",
+    "name": "Local Centre \u2014 Curtin",
+    "lat": -35.33316534802062,
+    "lng": 149.08010292759346,
+    "address": "Curtin, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d24623_149d07106",
+    "name": "Local Centre \u2014 Belconnen",
+    "lat": -35.246231785908066,
+    "lng": 149.07106106903254,
+    "address": "Belconnen, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d23405_149d05971",
+    "name": "Local Centre \u2014 Belconnen",
+    "lat": -35.234046043789796,
+    "lng": 149.0597088599113,
+    "address": "Belconnen, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d21746_149d07448",
+    "name": "Local Centre \u2014 Mckellar",
+    "lat": -35.21746174309625,
+    "lng": 149.07447641416348,
+    "address": "Mckellar, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d21780_149d14063",
+    "name": "Local Centre \u2014 Mitchell",
+    "lat": -35.21779892397963,
+    "lng": 149.1406311263277,
+    "address": "Mitchell, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d17046_149d06955",
+    "name": "Local Centre \u2014 Hall",
+    "lat": -35.17046189988862,
+    "lng": 149.06954988326845,
+    "address": "Hall, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d24645_149d03188",
+    "name": "Local Centre \u2014 Hawker",
+    "lat": -35.24644865893029,
+    "lng": 149.03187840298503,
+    "address": "Hawker, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d41685_149d09873",
+    "name": "Local Centre \u2014 Monash",
+    "lat": -35.416849474571116,
+    "lng": 149.09872897789103,
+    "address": "Monash, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d33651_149d04417",
+    "name": "Local Centre \u2014 Holder",
+    "lat": -35.336509762441075,
+    "lng": 149.04417020842752,
+    "address": "Holder, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d21884_149d03239",
+    "name": "Local Centre \u2014 Latham",
+    "lat": -35.218836697572954,
+    "lng": 149.03238900588389,
+    "address": "Latham, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d17437_149d11982",
+    "name": "Local Centre \u2014 Ngunnawal",
+    "lat": -35.17436568081184,
+    "lng": 149.1198243546952,
+    "address": "Ngunnawal, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d23997_149d12480",
+    "name": "Local Centre \u2014 Lyneham",
+    "lat": -35.23997440042198,
+    "lng": 149.12480149735973,
+    "address": "Lyneham, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d33267_149d15376",
+    "name": "Local Centre \u2014 Narrabundah",
+    "lat": -35.33267101984572,
+    "lng": 149.15375832385095,
+    "address": "Narrabundah, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d45013_149d08397",
+    "name": "Local Centre \u2014 Gordon",
+    "lat": -35.45013477370905,
+    "lng": 149.0839689512941,
+    "address": "Gordon, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d41355_149d10966",
+    "name": "Local Centre \u2014 Gowrie",
+    "lat": -35.41355138626289,
+    "lng": 149.1096621879922,
+    "address": "Gowrie, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d39096_149d16786",
+    "name": "Local Centre \u2014 Hume",
+    "lat": -35.390962623596195,
+    "lng": 149.1678599841025,
+    "address": "Hume, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d36779_149d11175",
+    "name": "Local Centre \u2014 Isaacs",
+    "lat": -35.36779245791222,
+    "lng": 149.11174957925925,
+    "address": "Isaacs, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d33919_149d07660",
+    "name": "Local Centre \u2014 Lyons",
+    "lat": -35.33918918128284,
+    "lng": 149.07660269338675,
+    "address": "Lyons, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d40491_149d11841",
+    "name": "Local Centre \u2014 Fadden",
+    "lat": -35.40491450795812,
+    "lng": 149.11841439061092,
+    "address": "Fadden, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d42845_149d09156",
+    "name": "Local Centre \u2014 Isabella Plains",
+    "lat": -35.428447280087546,
+    "lng": 149.09156208246213,
+    "address": "Isabella Plains, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d37554_149d10173",
+    "name": "Local Centre \u2014 Farrer",
+    "lat": -35.37554317558328,
+    "lng": 149.10173467441044,
+    "address": "Farrer, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d24834_149d06010",
+    "name": "Local Centre \u2014 Macquarie",
+    "lat": -35.24833580678114,
+    "lng": 149.06009775172768,
+    "address": "Macquarie, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d19332_149d04366",
+    "name": "Local Centre \u2014 Fraser",
+    "lat": -35.19332377882649,
+    "lng": 149.0436553350784,
+    "address": "Fraser, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d35531_149d09831",
+    "name": "Local Centre \u2014 Mawson",
+    "lat": -35.35530753298759,
+    "lng": 149.0983139683245,
+    "address": "Mawson, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d19702_149d11846",
+    "name": "Local Centre \u2014 Palmerston",
+    "lat": -35.197022475118445,
+    "lng": 149.11846070381654,
+    "address": "Palmerston, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d36260_149d08155",
+    "name": "Local Centre \u2014 Pearce",
+    "lat": -35.36259780243691,
+    "lng": 149.0815469216115,
+    "address": "Pearce, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d42756_149d11535",
+    "name": "Local Centre \u2014 Richardson",
+    "lat": -35.42755567519055,
+    "lng": 149.11534696786896,
+    "address": "Richardson, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d34729_149d03650",
+    "name": "Local Centre \u2014 Rivett",
+    "lat": -35.347288930108654,
+    "lng": 149.03649904898492,
+    "address": "Rivett, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d23974_149d05263",
+    "name": "Local Centre \u2014 Page",
+    "lat": -35.23973912438268,
+    "lng": 149.05263397685843,
+    "address": "Page, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d40084_149d08635",
+    "name": "Local Centre \u2014 Wanniassa",
+    "lat": -35.40083577916348,
+    "lng": 149.08635208123974,
+    "address": "Wanniassa, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d35274_149d05954",
+    "name": "Local Centre \u2014 Waramanga",
+    "lat": -35.35273918218688,
+    "lng": 149.0595411436218,
+    "address": "Waramanga, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d24901_149d04892",
+    "name": "Local Centre \u2014 Weetangera",
+    "lat": -35.24900655447677,
+    "lng": 149.0489201098682,
+    "address": "Weetangera, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d33399_149d05582",
+    "name": "Local Centre \u2014 Weston",
+    "lat": -35.333988051155,
+    "lng": 149.05582001186136,
+    "address": "Weston, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d38318_149d05011",
+    "name": "Local Centre \u2014 Kambah",
+    "lat": -35.38317644249875,
+    "lng": 149.05010561512165,
+    "address": "Kambah, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d38988_149d07803",
+    "name": "Local Centre \u2014 Kambah",
+    "lat": -35.3898756556682,
+    "lng": 149.07803010474285,
+    "address": "Kambah, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d23380_149d04032",
+    "name": "Local Centre \u2014 Scullin",
+    "lat": -35.23379687835929,
+    "lng": 149.0403197429613,
+    "address": "Scullin, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d20087_149d06870",
+    "name": "Local Centre \u2014 Spence",
+    "lat": -35.20086796006795,
+    "lng": 149.06869897140436,
+    "address": "Spence, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d37929_149d06626",
+    "name": "Local Centre \u2014 Kambah",
+    "lat": -35.37929279464258,
+    "lng": 149.06625599363295,
+    "address": "Kambah, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d50906_149d06671",
+    "name": "Local Centre \u2014 Tharwa",
+    "lat": -35.509059181235884,
+    "lng": 149.0667095989268,
+    "address": "Tharwa, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d44924_149d12166",
+    "name": "Local Centre \u2014 Theodore",
+    "lat": -35.44923562373185,
+    "lng": 149.12165681556942,
+    "address": "Theodore, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d39292_149d05872",
+    "name": "Local Centre \u2014 Kambah",
+    "lat": -35.39291708841501,
+    "lng": 149.05872426296312,
+    "address": "Kambah, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d35573_149d04042",
+    "name": "Local Centre \u2014 Chapman",
+    "lat": -35.35572708985569,
+    "lng": 149.04041917559124,
+    "address": "Chapman, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d23146_149d02695",
+    "name": "Local Centre \u2014 Higgins",
+    "lat": -35.231460122599756,
+    "lng": 149.02695288965842,
+    "address": "Higgins, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d22451_149d01131",
+    "name": "Local Centre \u2014 Holt",
+    "lat": -35.22450836990451,
+    "lng": 149.01130867990986,
+    "address": "Holt, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d47219_149d09563",
+    "name": "Local Centre \u2014 Banks",
+    "lat": -35.47219211394709,
+    "lng": 149.09563403936082,
+    "address": "Banks, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d32806_149d14260",
+    "name": "Local Centre \u2014 Griffith",
+    "lat": -35.32805578494953,
+    "lng": 149.1425992512316,
+    "address": "Griffith, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d21068_149d01229",
+    "name": "Local Centre \u2014 Macgregor",
+    "lat": -35.210683182283546,
+    "lng": 149.01228716058264,
+    "address": "Macgregor, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d19471_149d06192",
+    "name": "Local Centre \u2014 Spence",
+    "lat": -35.19470820274613,
+    "lng": 149.06192364185068,
+    "address": "Spence, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d17369_149d10815",
+    "name": "Local Centre \u2014 Ngunnawal",
+    "lat": -35.173691983568816,
+    "lng": 149.10814577459723,
+    "address": "Ngunnawal, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d14953_149d13006",
+    "name": "Local Centre \u2014 Unknown",
+    "lat": -35.14953096054361,
+    "lng": 149.13006363874536,
+    "address": "Unknown, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d28073_149d06643",
+    "name": "Local Centre \u2014 Unknown",
+    "lat": -35.28072977785324,
+    "lng": 149.06642772599412,
+    "address": "Unknown, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d30382_149d05759",
+    "name": "Local Centre \u2014 Unknown",
+    "lat": -35.303818102561294,
+    "lng": 149.0575875067172,
+    "address": "Unknown, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d15995_149d10080",
+    "name": "Local Centre \u2014 Casey",
+    "lat": -35.15994543281249,
+    "lng": 149.1007996187077,
+    "address": "Casey, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d19321_149d15011",
+    "name": "Local Centre \u2014 Franklin",
+    "lat": -35.19321111604193,
+    "lng": 149.15010951655992,
+    "address": "Franklin, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d31880_149d03790",
+    "name": "Local Centre \u2014 Coombs",
+    "lat": -35.318797866113826,
+    "lng": 149.03789713098524,
+    "address": "Coombs, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d24519_149d14470",
+    "name": "Local Centre \u2014 Downer",
+    "lat": -35.24518831782172,
+    "lng": 149.14469703962425,
+    "address": "Downer, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d29921_149d02335",
+    "name": "Local Centre \u2014 Denman Prospect",
+    "lat": -35.299211861320956,
+    "lng": 149.02334794858353,
+    "address": "Denman Prospect, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d14788_149d10448",
+    "name": "Local Centre \u2014 Taylor",
+    "lat": -35.1478811502461,
+    "lng": 149.1044844372097,
+    "address": "Taylor, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d34219_149d22946",
+    "name": "Local Centre \u2014 Oaks Estate",
+    "lat": -35.342192865988075,
+    "lng": 149.22946420393018,
+    "address": "Oaks Estate, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d14680_149d12513",
+    "name": "Local Centre \u2014 Jacka",
+    "lat": -35.146801005712874,
+    "lng": 149.12512710810392,
+    "address": "Jacka, ACT",
+    "source": "actmapi_cz4"
+  },
+  {
+    "place_id": "actmapi_cz4_m35d27983_149d03987",
+    "name": "Local Centre \u2014 Whitlam",
+    "lat": -35.2798260664329,
+    "lng": 149.03986750228796,
+    "address": "Whitlam, ACT",
+    "source": "actmapi_cz4"
+  }
+]

@@ -1,0 +1,16 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment (contains API keys)
+.env
+
+# Cached API data (large, re-fetchable)
+data/raw/shops_*.json
+data/raw/zoning_*.json
+data/raw/detail_*.json
+
+# Old output directory
+output/
