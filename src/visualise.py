@@ -865,9 +865,21 @@ def _add_scatter_legend(m, df):
       return lerpHex(CMAP_STOPS[lo], CMAP_STOPS[hi], idx-lo);
     }}
 
+    // Recurse into FeatureGroups to reach individual CircleMarkers
+    function forEachMarker(fn) {{
+      leafletMap.eachLayer(function(layer) {{
+        if (layer instanceof L.CircleMarker) {{
+          fn(layer);
+        }} else if (layer.eachLayer) {{
+          layer.eachLayer(function(sub) {{
+            if (sub instanceof L.CircleMarker) fn(sub);
+          }});
+        }}
+      }});
+    }}
+
     // Match each Leaflet CircleMarker to a DATA entry by tooltip name
-    leafletMap.eachLayer(function(layer) {{
-      if (!(layer instanceof L.CircleMarker)) return;
+    forEachMarker(function(layer) {{
       var tip = layer.getTooltip();
       if (!tip) return;
       var m = tip.getContent().match(/^<b>([^<]+)<\/b>/);
@@ -885,7 +897,7 @@ def _add_scatter_legend(m, df):
       }});
       var qs = DATA.map(function(d) {{ return d.q; }});
       var vmin = Math.min.apply(null, qs), vmax = Math.max.apply(null, qs);
-      leafletMap.eachLayer(function(layer) {{
+      forEachMarker(function(layer) {{
         if (layer._dataIdx === undefined) return;
         layer.setStyle({{ fillColor: jsColorScale(DATA[layer._dataIdx].q, vmin, vmax) }});
       }});
