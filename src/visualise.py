@@ -976,8 +976,17 @@ def _add_scatter_legend(m, df):
         }}
         vals = scaled;
       }} else {{
-        // All others are 0; set changed to 100
-        vals = vals.map(function(v, i) {{ return i === changedIdx ? 100 : 0; }});
+        // All others are 0 (e.g. dragging down from 100%) — distribute evenly
+        var n = vals.length - 1;
+        var base = Math.floor(remaining / n);
+        var leftover = remaining - base * n;
+        var otherCount = 0;
+        vals = vals.map(function(v, i) {{
+          if (i === changedIdx) return newVal;
+          var give = base + (otherCount < leftover ? 1 : 0);
+          otherCount++;
+          return give;
+        }});
       }}
       setVals(vals);
       applyWeights(vals);
